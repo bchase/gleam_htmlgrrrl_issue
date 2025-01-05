@@ -1,24 +1,32 @@
-# example
+I'm having an issue with `htmgrrrl` that I have a feeling is pebkac, but I just can't figure out what I'm doing wrong.
 
-[![Package Version](https://img.shields.io/hexpm/v/example)](https://hex.pm/packages/example)
-[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/example/)
+I created an example repo & test to show the behavior I'm getting, which can be found here: https://github.com/bchase/gleam_htmlgrrrl_issue/blob/master/test/example_test.gleam#L50-L60
 
-```sh
-gleam add example@1
+As you can see from the debug output below, it successfully matches the attribute value I'm looking for, builds up `state` as desired... but then the `htmgrrrl.sax` call itself returns `Error(Nil)`.
+
 ```
-```gleam
-import example
+  Compiled in 0.01s
+    Running example_test.main
+[]
+[]
+[]
+[]
+["https://example.com/image.webp"]
+["https://example.com/image.webp"]
+["https://example.com/image.webp"]
+["https://example.com/image.webp"]
+Error(Nil)
+F
+Failures:
 
-pub fn main() {
-  // TODO: An example of the project in use
-}
+  1) example_test.example_test: module 'example_test'
+     Values were not equal
+     expected: Ok(["https://example.com/image.webp"])
+          got: Error(Nil)
+     output:
+
+Finished in 0.016 seconds
+1 tests, 1 failures
 ```
 
-Further documentation can be found at <https://hexdocs.pm/example>.
-
-## Development
-
-```sh
-gleam run   # Run the project
-gleam test  # Run the tests
-```
+Thanks in advance for any help!
