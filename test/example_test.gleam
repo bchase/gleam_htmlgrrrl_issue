@@ -51,7 +51,7 @@ pub fn example_test() {
   let content = "https://example.com/image.webp"
 
   let return =
-    { "<meta property=\"og:image\" content=\"" <> content <> "\"/>" }
+    { "<html><head><meta property=\"og:image\" content=\"" <> content <> "\"/></head><body></body></html>" }
     |> htmgrrrl.sax([], gather_all_og_image_contents)
     |> io.debug
 
